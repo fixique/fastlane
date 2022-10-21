@@ -675,13 +675,13 @@ module FastlaneCore
       @jwt = jwt
       @api_key = api_key
 
-      if should_use_altool?(upload, use_shell_script)
-        UI.verbose("Using altool as transporter.")
-        @transporter_executor = AltoolTransporterExecutor.new
-      else
-        UI.verbose("Using iTMSTransporter as transporter.")
-        @transporter_executor = use_shell_script ? ShellScriptTransporterExecutor.new : JavaTransporterExecutor.new
-      end
+      # if should_use_altool?(upload, use_shell_script)
+      UI.verbose("Using altool as transporter.")
+      @transporter_executor = AltoolTransporterExecutor.new
+      # else
+      #   UI.verbose("Using iTMSTransporter as transporter.")
+      #   @transporter_executor = use_shell_script ? ShellScriptTransporterExecutor.new : JavaTransporterExecutor.new
+      # end
 
       @provider_short_name = provider_short_name
     end
